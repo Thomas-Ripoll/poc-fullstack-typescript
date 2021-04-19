@@ -6,8 +6,10 @@ const app = express();
 
 app.get('/', (req : Request, res : Response ) => {
     res.send('Hello World!')
-  })
+})
 
-  app.listen(3000, function () {
+app.listen(3000, function () {
     console.log('App is listening on port 3000');
 });
+
+app.use('/static', express.static('build/front')); 
